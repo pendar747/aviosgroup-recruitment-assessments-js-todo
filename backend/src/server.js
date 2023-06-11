@@ -12,20 +12,6 @@ const server = () => {
     res.json(await todoService.getTodos());
   });
 
-  /**
-  POST /api/todo
-  {
-   "task": "Some API"
-  }
-
-   {
-    "todos": [
-      {
-        "task": "Some API"
-      }
-    ]
-   }
-  **/
   server.post("/api/todo", async (req, res, next) => {
     try {
       await todoService.addTodo(req.body);
